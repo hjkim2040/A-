@@ -1,6 +1,4 @@
 from collections import deque
-
-
 def bfs():
     global Sum
     while q:

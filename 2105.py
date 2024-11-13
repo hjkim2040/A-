@@ -7,7 +7,6 @@ def dfs(y, x, path, cnt):
         # 결과 업데이트 => 더 많은 디저트 투어 경로로
         result = max(result, len(path))
         return
-
     # 지역을 넘으면 안된다 그리고 같은 메뉴를 파는 디저트 카페도 제외
     if 0 <= y < len(cafe) and 0 <= x < len(cafe[y]) and cafe[y][x] not in path:
         # 지역의 끝에 도달하기 전까지 직진 => 같은 방향으로 계속 가기

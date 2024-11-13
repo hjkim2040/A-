@@ -12,7 +12,6 @@ for tc in range(1, T + 1):
     # 부모 배열
     par = [0] * (V + 1)
     check = [0] * (V + 1)  # n1 조상노드 표시
-
     # 간선의 수 만큼 반복
     for i in range(E):
         t1, t2 = arr[i * 2], arr[i * 2 + 1]
@@ -20,7 +19,6 @@ for tc in range(1, T + 1):
         chr[t1].append(t2)
         # 부모가 누구인지 알 수 있게
         par[t2] = t1
-
     # n1 조상 찾기
     p = n1
     # p가 0이면 더 이상 조상이 없다
@@ -29,13 +27,11 @@ for tc in range(1, T + 1):
         check[p] = 1
         # 계속 거슬러 올라감
         p = par[p]
-
     # n2 조상 중 n1 조상 찾기
     p = n2
     # check[p]가 1이면 공통 조상이기 때문에
     while check[p] == 0:
         p = par[p]
-
     q = [p] # 공통 조상을 배열로
     cnt = 0 # 서브트리의 크기
     while q:
@@ -43,7 +39,6 @@ for tc in range(1, T + 1):
         cnt += 1
         for w in chr[t]: # 꺼낸 요소와 트리로 연결되어 있는 요소를 q배열에 추가
             q.append(w)
-
     print(f'#{tc} {p} {cnt}')
 
 # 1. 트리 혹은 그래프 구현을 위한 배열 초기화
